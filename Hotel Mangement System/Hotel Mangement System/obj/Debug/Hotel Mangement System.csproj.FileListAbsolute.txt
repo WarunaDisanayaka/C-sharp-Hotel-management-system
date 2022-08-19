@@ -1,0 +1,11 @@
+C:\Users\warun\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\bin\Debug\Hotel Mangement System.exe.config
+C:\Users\warun\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\bin\Debug\Hotel Mangement System.exe
+C:\Users\warun\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\bin\Debug\Hotel Mangement System.pdb
+C:\Users\warun\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel Mangement System.csproj.AssemblyReference.cache
+C:\Users\warun\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel Mangement System.csproj.SuggestedBindingRedirects.cache
+C:\Users\warun\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel_Mangement_System.Dashboard.resources
+C:\Users\warun\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel_Mangement_System.Properties.Resources.resources
+C:\Users\warun\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel Mangement System.csproj.GenerateResource.cache
+C:\Users\warun\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel Mangement System.csproj.CoreCompileInputs.cache
+C:\Users\warun\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel Mangement System.exe
+C:\Users\warun\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel Mangement System.pdb
