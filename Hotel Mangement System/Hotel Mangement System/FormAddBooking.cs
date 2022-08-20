@@ -62,12 +62,32 @@ namespace Hotel_Mangement_System
             
             book.register(roomID.Text, cusID.Text, int.Parse(textBox5.Text),dateTimePicker4.Value.ToString("yyy-mm-dd"),dateTimePicker3.Value.ToString("yyy-mm-dd"),int.Parse(textBox6.Text),textBox1.Text.ToString(),textBox2.Text.ToString(),Breakfast.Text,checkBox2.Text,checkBox1.Text);
         }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            cls();
+        }
 
         private void read()
         {
             
             book.read();
             dataGridView1.DataSource = book.dt;
+            cls();
+        }
+
+        private void cls()
+        {
+            textBox8.Text = "";
+            textBox2.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            dateTimePicker4.Value = DateTime.Today;
+            dateTimePicker3.Value = DateTime.Today;
+            numericUpDown2.Value = 0;
+            numericUpDown1.Value = 0;
+            Breakfast.Checked = false;
+            checkBox2.Checked = false;
+            checkBox1.Checked = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -113,9 +133,10 @@ namespace Hotel_Mangement_System
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button10_Click(object sender, EventArgs e)
         {
-
+            book.pricecal(textBox8.Text, dateTimePicker4.Value.ToString("yyymmdd"), dateTimePicker3.Value.ToString("yyymmdd"), int.Parse(textBox6.Text));
+            textBox5.Text = book.totalprice.ToString();
         }
     }
 }

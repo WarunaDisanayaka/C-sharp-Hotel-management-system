@@ -28,6 +28,7 @@ namespace Hotel_Mangement_System
         public DataTable dt = new DataTable();
         public AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
         public AutoCompleteStringCollection client = new AutoCompleteStringCollection();
+        public int totalprice = 0;
 
 
         public void register(string RoomID, string ClientID, int Price, string BookDate, string DeDate, int NoOfRoom, string Nochild, string Noadults, string Breakfast, string Lunch, string Dinner)
@@ -160,6 +161,35 @@ namespace Hotel_Mangement_System
                 client.Add(reader["Customer_NIC"].ToString());
 
             }
+        }
+
+        public void pricecal(string RoomID, string BookDate, string DeDate, int NoOfRoom)
+        {
+            int price = 0;
+            int bdate = int.Parse(BookDate);
+            int dedate = int.Parse(DeDate);
+            int nroom = NoOfRoom;
+
+            DBconnection db = new DBconnection();
+            db.Connect();
+            string sql = "SELECT * FROM `room` where Room_ID = '"+RoomID+"'";
+
+            MySqlCommand cmd = new MySqlCommand(sql, db.conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                price = int.Parse(reader["Room_Price"].ToString());
+            }
+
+            int stdays = dedate - bdate;
+
+            int sum = stdays * nroom * price;
+
+            totalprice = sum;
+            
+
+
+
         }
     }
 }

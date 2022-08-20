@@ -74,3 +74,4 @@ D:\C# Langiage\New folder\C-sharp-Hotel-management-system\Hotel Mangement System
 D:\C# Langiage\New folder\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel_Mangement_System.FormAddBooking.resources
 C:\Users\Isuru Alwis\OneDrive\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel_Mangement_System.FormAddBooking.resources
 C:\Users\Isuru Alwis\OneDrive\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel_Mangement_System.FormProperty.resources
+D:\C# Langiage\New folder\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel_Mangement_System.FormProperty.resources
