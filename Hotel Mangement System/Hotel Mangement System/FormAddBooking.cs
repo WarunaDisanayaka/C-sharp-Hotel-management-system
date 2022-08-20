@@ -12,9 +12,12 @@ namespace Hotel_Mangement_System
 {
     public partial class FormAddBooking : Form
     {
+        Book book = new Book();
+
         public FormAddBooking()
         {
             InitializeComponent();
+            read();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -33,6 +36,75 @@ namespace Hotel_Mangement_System
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+            book.roomdata();
+            textBox8.AutoCompleteMode = AutoCompleteMode.Suggest;
+            textBox8.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            textBox8.AutoCompleteCustomSource = book.collection;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            book.clientdata();
+            textBox2.AutoCompleteMode = AutoCompleteMode.Suggest;
+            textBox2.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            textBox2.AutoCompleteCustomSource = book.client;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            
+            book.register(textBox8.Text, textBox2.Text, int.Parse(textBox5.Text),dateTimePicker4.Value.ToString("yyy-mm-dd"),dateTimePicker3.Value.ToString("yyy-mm-dd"),int.Parse(textBox6.Text),numericUpDown1.Value.ToString(),numericUpDown2.Value.ToString(),Breakfast.Text,checkBox2.Text,checkBox1.Text);
+        }
+
+        private void read()
+        {
+            
+            book.read();
+            dataGridView1.DataSource = book.dt;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView senderGrid = (DataGridView)sender;
+            try
+            {
+                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    textBox8.Text = (dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+                    textBox2.Text = (dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    textBox5.Text = (dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
+                    dateTimePicker4.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
+                    dateTimePicker3.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
+                    textBox6.Text = (dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString());
+                    numericUpDown2.Value = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString());
+                    numericUpDown1.Value = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString());
+                    if(dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString() == "Breakfast")
+                    {
+                        Breakfast.Checked = true;
+                    }
+                    if (dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString() == "Lunch")
+                    {
+                        checkBox2.Checked = true;
+                    }
+                    if (dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString() == "Dinner")
+                    {
+                        checkBox1.Checked = true;
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Do not click header.. ");
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
         {
 
         }

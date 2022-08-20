@@ -18,20 +18,26 @@ namespace Hotel_Mangement_System
         public string DeDate { get; set; }
         public int NoOfRoom { get; set; }
         public int ID { get; set; }
+        public string Nochild { get; set; }
+        public string Noadults { get; set; }
+        public string Breakfast { get; set; }
+        public string Lunch { get; set; }
+        public string Dinner { get; set; }
 
         DataSet ds = new DataSet();
         public DataTable dt = new DataTable();
         public AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+        public AutoCompleteStringCollection client = new AutoCompleteStringCollection();
 
 
-        public void register(string RoomID, string ClientID, int Price, string BookDate, string DeDate, int NoOfRoom)
+        public void register(string RoomID, string ClientID, int Price, string BookDate, string DeDate, int NoOfRoom, string Nochild, string Noadults, string Breakfast, string Lunch, string Dinner)
         {
             DBconnection db = new DBconnection();
             db.Connect();
 
             using (MySqlCommand cmd = new MySqlCommand())
             {
-                cmd.CommandText = "INSERT INTO `books`(`Booked_Room_ID`, `Booked_Client_ID`, `Booked_Price`, `Booked_Date`, `Booked_Departure_Date`, `No_Of_Rooms`) VALUES (@rid,@cid,@bprice,@bdate,@bddate,@noroom)";
+                cmd.CommandText = "INSERT INTO `books`(`Booked_Room_ID`, `Booked_Client_ID`, `Booked_Price`, `Booked_Date`, `Booked_Departure_Date`, `No_Of_Rooms`, `No_Of_Children`, `No_Of_Adults`, `Breakfast`, `Lunch`, `Dinner`) VALUES (@rid,@cid,@bprice,@bdate,@bddate,@noroom,@nochild,@noadults,@break,@lunch,@dinner)";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = db.conn;
 
@@ -41,6 +47,11 @@ namespace Hotel_Mangement_System
                 cmd.Parameters.Add("@bdate", MySqlDbType.VarChar).Value = BookDate;
                 cmd.Parameters.Add("@bddate", MySqlDbType.VarChar).Value = DeDate;
                 cmd.Parameters.Add("@noroom", MySqlDbType.VarChar).Value = NoOfRoom;
+                cmd.Parameters.Add("@nochild", MySqlDbType.VarChar).Value = Nochild;
+                cmd.Parameters.Add("@noadults", MySqlDbType.VarChar).Value = Noadults;
+                cmd.Parameters.Add("@break", MySqlDbType.VarChar).Value = Breakfast;
+                cmd.Parameters.Add("@lunch", MySqlDbType.VarChar).Value = Lunch;
+                cmd.Parameters.Add("@dinner", MySqlDbType.VarChar).Value = Dinner;
 
 
                 cmd.ExecuteNonQuery();
@@ -52,14 +63,14 @@ namespace Hotel_Mangement_System
 
         //update
 
-        public void update(int ID, string RoomID, string ClientID, int Price, string BookDate, string DeDate, int NoOfRoom)
+        public void update(int ID, string RoomID, string ClientID, int Price, string BookDate, string DeDate, int NoOfRoom, string Nochild, string Noadults, string Breakfast, string Lunch, string Dinner)
         {
             DBconnection db = new DBconnection();
             db.Connect();
 
             using (MySqlCommand cmd = new MySqlCommand())
             {
-                cmd.CommandText = "UPDATE `books` SET `Booked_Room_ID`=@rid,`Booked_Client_ID`=@cid,`Booked_Price`=@bprice,`Booked_Date`=@bdate,`Booked_Departure_Date`=@bddate,`No_Of_Rooms`=@noroom WHERE id = @id";
+                cmd.CommandText = "UPDATE `books` SET `Booked_Room_ID`=@rid,`Booked_Client_ID`=@cid,`Booked_Price`=@bprice,`Booked_Date`=@bdate,`Booked_Departure_Date`=@bddate,`No_Of_Rooms`=@noroom,`No_Of_Children`=@nochild,`No_Of_Adults`=@noadults,`Breakfast`=@break,`Lunch`=@lunch,`Dinner`=@dinner WHERE id = @id";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = db.conn;
 
@@ -70,6 +81,11 @@ namespace Hotel_Mangement_System
                 cmd.Parameters.Add("@bddate", MySqlDbType.VarChar).Value = DeDate;
                 cmd.Parameters.Add("@noroom", MySqlDbType.VarChar).Value = NoOfRoom;
                 cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = ID;
+                cmd.Parameters.Add("@nochild", MySqlDbType.VarChar).Value = Nochild;
+                cmd.Parameters.Add("@noadults", MySqlDbType.VarChar).Value = Noadults;
+                cmd.Parameters.Add("@break", MySqlDbType.VarChar).Value = Breakfast;
+                cmd.Parameters.Add("@lunch", MySqlDbType.VarChar).Value = Lunch;
+                cmd.Parameters.Add("@dinner", MySqlDbType.VarChar).Value = Dinner;
 
 
 
@@ -126,7 +142,22 @@ namespace Hotel_Mangement_System
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                collection.Add(reader["Room_Name"].ToString());
+                collection.Add(reader["Room_ID"].ToString());
+
+            }
+        }
+
+        public void clientdata()
+        {
+            DBconnection db = new DBconnection();
+            db.Connect();
+            dt.Clear();
+            string sql = "SELECT * FROM `customer`";
+            MySqlCommand cmd = new MySqlCommand(sql, db.conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                client.Add(reader["Customer_NIC"].ToString());
 
             }
         }

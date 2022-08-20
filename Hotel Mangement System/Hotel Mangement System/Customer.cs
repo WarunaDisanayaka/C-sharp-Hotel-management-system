@@ -33,7 +33,7 @@ namespace Hotel_Mangement_System
        
             using (MySqlCommand cmd = new MySqlCommand())
             {
-                cmd.CommandText = "INSERT INTO customer(cname,caddress,ctel,cnic) VALUES(@name,@address,@tel,@nic)";
+                cmd.CommandText = "INSERT INTO customer(Customer_Name,Customer_Address,Customer_Tel,Customer_NIC) VALUES(@name,@address,@tel,@nic)";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = db.conn;
 
@@ -57,7 +57,7 @@ namespace Hotel_Mangement_System
             db.Connect();
             using (MySqlCommand cmd = new MySqlCommand())
             {
-                cmd.CommandText = "UPDATE customer SET `cname`=@name,`caddress`=@address,`ctel`=@tel WHERE `cnic`=@nic";
+                cmd.CommandText = "UPDATE customer SET `Customer_Name`=@name,`Customer_Address`=@address,`Customer_Tel`=@tel WHERE `Customer_NIC`=@nic";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = db.conn;
 
@@ -80,7 +80,7 @@ namespace Hotel_Mangement_System
             db.Connect();
             using (MySqlCommand cmd = new MySqlCommand())
             {
-                cmd.CommandText = "DELETE FROM `customer` WHERE `cnic`=@nic";
+                cmd.CommandText = "DELETE FROM `customer` WHERE `Customer_NIC`=@nic";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = db.conn;
 
