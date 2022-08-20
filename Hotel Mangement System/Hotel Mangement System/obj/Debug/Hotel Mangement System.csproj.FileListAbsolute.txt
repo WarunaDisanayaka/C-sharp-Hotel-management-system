@@ -40,3 +40,4 @@ C:\Users\Isuru Alwis\OneDrive\Documents\GitHub\C-sharp-Hotel-management-system\H
 C:\Users\Isuru Alwis\OneDrive\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\bin\Debug\MySql.Web.xml
 C:\Users\Isuru Alwis\OneDrive\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel Mangement System.exe.config
 C:\Users\Isuru Alwis\OneDrive\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel Mangement System.csproj.CopyComplete
+C:\Users\Isuru Alwis\OneDrive\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel_Mangement_System.FormAddBooking.resources

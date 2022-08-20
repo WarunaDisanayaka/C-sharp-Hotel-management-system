@@ -130,6 +130,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Dashboard";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.OnLoad);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
