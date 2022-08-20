@@ -95,9 +95,11 @@ namespace Hotel_Mangement_System
 
         public void read()
         {
+            DBconnection db = new DBconnection();
+            db.Connect();
             dt.Clear();
             string sql = "SELECT * FROM `customer`";
-            MySqlDataAdapter mda = new MySqlDataAdapter();
+            MySqlDataAdapter mda = new MySqlDataAdapter(sql,db.conn);
             mda.Fill(ds);
             dt = ds.Tables[0];
         }
