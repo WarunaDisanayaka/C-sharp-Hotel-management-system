@@ -71,3 +71,4 @@ D:\C# Langiage\New folder\C-sharp-Hotel-management-system\Hotel Mangement System
 D:\C# Langiage\New folder\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel Mangement System.csproj.CopyComplete
 D:\C# Langiage\New folder\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel Mangement System.exe
 D:\C# Langiage\New folder\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel Mangement System.pdb
+D:\C# Langiage\New folder\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel_Mangement_System.FormAddBooking.resources
