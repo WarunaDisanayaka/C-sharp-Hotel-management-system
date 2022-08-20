@@ -1,29 +1,49 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace Hotel_Mangement_System
 {
-    class Customer
+    
+    class Customer : DBconnection
     {
-        public string Id { get; set; }
+
         public string Name { get; set; }
         public string Address { get; set; }
 
-        public int Nic { get; set; }
+        public string Nic { get; set; }
 
-        public int Phone { get; set; }
+        public string Phone { get; set; }
 
-        DBconnection db = new DBconnection();
 
-        
+        public void register(string Name,string Address,string Nic,string Phone)
+        {
+            DBconnection db = new DBconnection();
+            db.Connect();
+            
+            string sql = "INSERT INTO customer(cname,caddress,ctel,cnic)VALUES('"+Name+"','"+Address+"','"+Nic+"','"+Phone+"')";
+          
+            MySqlCommand cm = new MySqlCommand(sql,conn);
+            conn.Open();
+            if (cm.ExecuteNonQuery()==1)
+            {
 
-        //update
+            }
+            else
+            {
+                MessageBox.Show("Data not instered");
+            }
+
+           
+
+        }
+
 
         public void update(string Name, string Address, string Nic, string Phone)
         {
