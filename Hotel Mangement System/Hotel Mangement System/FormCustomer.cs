@@ -54,5 +54,29 @@ namespace Hotel_Mangement_System
             Customer cus = new Customer();
             cus.delete(textBox3.Text);
         }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView senderGrid = (DataGridView)sender;
+            try
+            {
+                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    textBox1.Text = (dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+                    textBox2.Text = (dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    textBox3.Text = (dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
+                    textBox4.Text = (dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Do not click header.. ");
+            }
+        }
     }
 }
