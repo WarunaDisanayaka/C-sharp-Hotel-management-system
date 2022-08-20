@@ -16,6 +16,7 @@ namespace Hotel_Mangement_System
         private Button currentButton;
         private Random random;
         private int tempIndex;
+        private Form activeForm;
 
 
         public Dashboard()
@@ -68,9 +69,27 @@ namespace Hotel_Mangement_System
             }
         }
 
+        private void OpenChildForm(Form childForm,object btnSender)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            ActivateButton(btnSender);
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            this.panelDesktop.Controls.Add(childForm);
+            this.panelDesktop.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            
+        }
+
+
         private void button1_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new FormCustomer(),sender);
         }
 
         private void button3_Click(object sender, EventArgs e)
