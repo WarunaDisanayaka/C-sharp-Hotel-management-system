@@ -21,3 +21,4 @@ C:\Users\Isuru Alwis\OneDrive\Documents\GitHub\C-sharp-Hotel-management-system\H
 C:\Users\Isuru Alwis\OneDrive\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel Mangement System.exe
 C:\Users\Isuru Alwis\OneDrive\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel Mangement System.pdb
 C:\Users\Isuru Alwis\OneDrive\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel_Mangement_System.FormCustomer.resources
+C:\Users\Isuru Alwis\OneDrive\Documents\GitHub\C-sharp-Hotel-management-system\Hotel Mangement System\Hotel Mangement System\obj\Debug\Hotel_Mangement_System.FormAddRoom.resources

@@ -94,7 +94,7 @@ namespace Hotel_Mangement_System
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new FormAddRoom(), sender);
         }
 
         private void button2_Click(object sender, EventArgs e)
