@@ -21,6 +21,9 @@ namespace Hotel_Mangement_System
 
         public string Phone { get; set; }
 
+        DataSet ds = new DataSet();
+        DataTable dt = new DataTable();
+
 
 
         public void register(string Name,string Address,string Nic,string Phone)
@@ -88,6 +91,15 @@ namespace Hotel_Mangement_System
                 cmd.ExecuteNonQuery();
                 db.conn.Close();
             }
+        }
+
+        public void read()
+        {
+            dt.Clear();
+            string sql = "SELECT * FROM `customer`";
+            MySqlDataAdapter mda = new MySqlDataAdapter();
+            mda.Fill(ds);
+            dt = ds.Tables[0];
         }
 
     }

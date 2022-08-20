@@ -15,6 +15,8 @@ namespace Hotel_Mangement_System
         public FormCustomer()
         {
             InitializeComponent();
+            Customer cu = new Customer();
+            cu.read();
         }
 
         private void label1_Click(object sender, EventArgs e)
