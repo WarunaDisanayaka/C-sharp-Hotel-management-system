@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Hotel_Mangement_System
 {
@@ -43,23 +44,23 @@ namespace Hotel_Mangement_System
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
             book.roomdata();
-            textBox8.AutoCompleteMode = AutoCompleteMode.Suggest;
-            textBox8.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            textBox8.AutoCompleteCustomSource = book.collection;
+            roomID.AutoCompleteMode = AutoCompleteMode.Suggest;
+            roomID.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            roomID.AutoCompleteCustomSource = book.collection;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             book.clientdata();
-            textBox2.AutoCompleteMode = AutoCompleteMode.Suggest;
-            textBox2.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            textBox2.AutoCompleteCustomSource = book.client;
+            cusID.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cusID.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            cusID.AutoCompleteCustomSource = book.client;
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             
-            book.register(textBox8.Text, textBox2.Text, int.Parse(textBox5.Text),dateTimePicker4.Value.ToString("yyy-mm-dd"),dateTimePicker3.Value.ToString("yyy-mm-dd"),int.Parse(textBox6.Text),numericUpDown1.Value.ToString(),numericUpDown2.Value.ToString(),Breakfast.Text,checkBox2.Text,checkBox1.Text);
+            book.register(roomID.Text, cusID.Text, int.Parse(textBox5.Text),dateTimePicker4.Value.ToString("yyy-mm-dd"),dateTimePicker3.Value.ToString("yyy-mm-dd"),int.Parse(textBox6.Text),textBox1.Text.ToString(),textBox2.Text.ToString(),Breakfast.Text,checkBox2.Text,checkBox1.Text);
         }
 
         private void read()
@@ -76,26 +77,34 @@ namespace Hotel_Mangement_System
             {
                 if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
                 {
-                    textBox8.Text = (dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
-                    textBox2.Text = (dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
-                    textBox5.Text = (dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString());
-                    dateTimePicker4.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
-                    dateTimePicker3.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
-                    textBox6.Text = (dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString());
-                    numericUpDown2.Value = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString());
-                    numericUpDown1.Value = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString());
-                    if(dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString() == "Breakfast")
+                    if (string.Equals(dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString(), "Breakfast"))
                     {
                         Breakfast.Checked = true;
                     }
-                    if (dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString() == "Lunch")
-                    {
-                        checkBox2.Checked = true;
-                    }
-                    if (dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString() == "Dinner")
+
+                    if (string.Equals(dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString(), "Lunch"))
                     {
                         checkBox1.Checked = true;
                     }
+
+                    if (string.Equals(dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString(), "Dinner"))
+                    {
+                        checkBox2.Checked = true;
+                    }
+                    int cusId = Convert.ToInt32((dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString()));
+                    textBox1.Text = (dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString());
+                    textBox2.Text = (dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString());
+                    textBox6.Text = (dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString());
+                    dateTimePicker4.Text = (dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
+                    dateTimePicker3.Text = (dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
+                    roomID.Text = (dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+
+                    
+                    
+
+                    cusID.Text = cusId.ToString();
+
+
                 }
             }
             catch
