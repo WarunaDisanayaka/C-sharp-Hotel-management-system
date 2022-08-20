@@ -112,5 +112,10 @@ namespace Hotel_Mangement_System
             this.Location = new Point(0, 0);
             this.Size = new Size(w, h);
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormProperty(), sender);
+        }
     }
 }

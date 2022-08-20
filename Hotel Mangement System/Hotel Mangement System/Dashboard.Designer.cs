@@ -29,17 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelDesktop = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panelDesktop = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(16)))), ((int)(((byte)(61)))));
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
@@ -49,6 +51,40 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(158, 469);
             this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(26)))), ((int)(((byte)(101)))));
+            this.panel2.Location = new System.Drawing.Point(1, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(157, 54);
+            this.panel2.TabIndex = 1;
+            // 
+            // panelDesktop
+            // 
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(158, 0);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(658, 469);
+            this.panelDesktop.TabIndex = 1;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::Hotel_Mangement_System.Properties.Resources.icons8_property_40;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button4.ImageKey = "(none)";
+            this.button4.Location = new System.Drawing.Point(0, 231);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(158, 39);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "         Add Properties\r\n";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -105,22 +141,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(26)))), ((int)(((byte)(101)))));
-            this.panel2.Location = new System.Drawing.Point(1, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(157, 54);
-            this.panel2.TabIndex = 1;
-            // 
-            // panelDesktop
-            // 
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(158, 0);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(658, 469);
-            this.panelDesktop.TabIndex = 1;
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,6 +164,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panelDesktop;
+        private System.Windows.Forms.Button button4;
     }
 }
 

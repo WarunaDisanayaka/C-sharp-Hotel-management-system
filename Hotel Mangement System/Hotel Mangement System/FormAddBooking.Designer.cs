@@ -29,15 +29,19 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.Breakfast = new System.Windows.Forms.CheckBox();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,19 +53,15 @@
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.Breakfast = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -83,6 +83,77 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Details";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(28, 181);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(30, 13);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Meal";
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(200, 177);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(56, 17);
+            this.checkBox2.TabIndex = 23;
+            this.checkBox2.Text = "Lunch";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(267, 177);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(57, 17);
+            this.checkBox1.TabIndex = 22;
+            this.checkBox1.Text = "Dinner";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // Breakfast
+            // 
+            this.Breakfast.AutoSize = true;
+            this.Breakfast.Location = new System.Drawing.Point(119, 177);
+            this.Breakfast.Name = "Breakfast";
+            this.Breakfast.Size = new System.Drawing.Size(71, 17);
+            this.Breakfast.TabIndex = 21;
+            this.Breakfast.Text = "Breakfast";
+            this.Breakfast.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(122, 125);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(202, 20);
+            this.numericUpDown2.TabIndex = 20;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 129);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "No of Adults";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(122, 84);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(202, 20);
+            this.numericUpDown1.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "No of Child";
             // 
             // textBox2
             // 
@@ -138,42 +209,6 @@
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Room Details";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(614, 381);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(82, 26);
-            this.button6.TabIndex = 16;
-            this.button6.Text = "Clear";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(406, 381);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(82, 26);
-            this.button7.TabIndex = 15;
-            this.button7.Text = "Update";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(508, 381);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(82, 26);
-            this.button8.TabIndex = 14;
-            this.button8.Text = "Delete";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(305, 381);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(82, 26);
-            this.button9.TabIndex = 13;
-            this.button9.Text = "Save";
-            this.button9.UseVisualStyleBackColor = true;
             // 
             // button10
             // 
@@ -264,76 +299,42 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Room ID";
             // 
-            // label1
+            // button6
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "No of Child";
+            this.button6.Location = new System.Drawing.Point(614, 381);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(82, 26);
+            this.button6.TabIndex = 16;
+            this.button6.Text = "Clear";
+            this.button6.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // button7
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(122, 84);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(202, 20);
-            this.numericUpDown1.TabIndex = 18;
+            this.button7.Location = new System.Drawing.Point(406, 381);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(82, 26);
+            this.button7.TabIndex = 15;
+            this.button7.Text = "Update";
+            this.button7.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // button8
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 129);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "No of Adults";
+            this.button8.Location = new System.Drawing.Point(508, 381);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(82, 26);
+            this.button8.TabIndex = 14;
+            this.button8.Text = "Delete";
+            this.button8.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown2
+            // button9
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(122, 125);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(202, 20);
-            this.numericUpDown2.TabIndex = 20;
-            // 
-            // Breakfast
-            // 
-            this.Breakfast.AutoSize = true;
-            this.Breakfast.Location = new System.Drawing.Point(119, 177);
-            this.Breakfast.Name = "Breakfast";
-            this.Breakfast.Size = new System.Drawing.Size(71, 17);
-            this.Breakfast.TabIndex = 21;
-            this.Breakfast.Text = "Breakfast";
-            this.Breakfast.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(267, 177);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(57, 17);
-            this.checkBox1.TabIndex = 22;
-            this.checkBox1.Text = "Dinner";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(200, 177);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(56, 17);
-            this.checkBox2.TabIndex = 23;
-            this.checkBox2.Text = "Lunch";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 181);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 13);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Meal";
+            this.button9.Location = new System.Drawing.Point(305, 381);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(82, 26);
+            this.button9.TabIndex = 13;
+            this.button9.Text = "Save";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // FormAddBooking
             // 
@@ -352,11 +353,11 @@
             this.Text = "FormAddBooking";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

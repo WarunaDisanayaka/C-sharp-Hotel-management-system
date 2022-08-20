@@ -36,5 +36,10 @@ namespace Hotel_Mangement_System
         {
 
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
