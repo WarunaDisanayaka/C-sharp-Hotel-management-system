@@ -15,9 +15,7 @@ namespace Hotel_Mangement_System
         public FormCustomer()
         {
             InitializeComponent();
-            Customer cu = new Customer();
-            cu.read();
-            dataGridView1.DataSource = cu.dt;
+            read();
 
         }
 
@@ -31,6 +29,7 @@ namespace Hotel_Mangement_System
             Customer cs = new Customer();
             cs.register(textBox1.Text,textBox2.Text,textBox3.Text,textBox4.Text);
             MessageBox.Show("Added");
+            read();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -47,17 +46,26 @@ namespace Hotel_Mangement_System
         {
             Customer cus = new Customer();
             cus.update(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
+            read();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Customer cus = new Customer();
             cus.delete(textBox3.Text);
+            read();
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
 
+        }
+
+        private void read()
+        {
+            Customer cu = new Customer();
+            cu.read();
+            dataGridView1.DataSource = cu.dt;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
