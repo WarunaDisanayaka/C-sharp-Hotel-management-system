@@ -24,7 +24,9 @@ namespace Hotel_Mangement_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Customer cs = new Customer();
+            cs.register(textBox1.Text,textBox2.Text,textBox3.Text,textBox4.Text);
+            MessageBox.Show("Added");
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

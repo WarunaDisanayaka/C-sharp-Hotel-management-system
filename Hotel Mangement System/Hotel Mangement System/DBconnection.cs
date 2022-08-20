@@ -13,7 +13,7 @@ namespace Hotel_Mangement_System
     {
         public MySqlConnection conn;
         
-        public void Connect()
+        public MySqlConnection Connect()
         {
             string server = "localhost";
             string database = "hoteldata";
@@ -32,6 +32,8 @@ namespace Hotel_Mangement_System
             {
                 MessageBox.Show("failed");
             }
+
+            return conn;
 
         }
     }
