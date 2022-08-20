@@ -30,6 +30,7 @@ namespace Hotel_Mangement_System
             cs.register(textBox1.Text,textBox2.Text,textBox3.Text,textBox4.Text);
             MessageBox.Show("Added");
             read();
+            cle();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -47,6 +48,7 @@ namespace Hotel_Mangement_System
             Customer cus = new Customer();
             cus.update(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
             read();
+            cle();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -54,6 +56,7 @@ namespace Hotel_Mangement_System
             Customer cus = new Customer();
             cus.delete(textBox3.Text);
             read();
+            cle();
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -66,6 +69,14 @@ namespace Hotel_Mangement_System
             Customer cu = new Customer();
             cu.read();
             dataGridView1.DataSource = cu.dt;
+        }
+
+        private void cle()
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
