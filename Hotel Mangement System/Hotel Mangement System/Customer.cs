@@ -69,5 +69,26 @@ namespace Hotel_Mangement_System
             }
         }
 
+        //delete
+
+        public void delete(string Nic)
+        {
+            DBconnection db = new DBconnection();
+            db.Connect();
+            using (MySqlCommand cmd = new MySqlCommand())
+            {
+                cmd.CommandText = "DELETE FROM `customer` WHERE `cnic`=@nic";
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = db.conn;
+
+
+                cmd.Parameters.Add("@nic", MySqlDbType.VarChar).Value = Nic;
+
+
+                cmd.ExecuteNonQuery();
+                db.conn.Close();
+            }
+        }
+
     }
 }
