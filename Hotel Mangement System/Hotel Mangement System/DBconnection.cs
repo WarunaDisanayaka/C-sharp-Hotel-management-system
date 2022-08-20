@@ -26,7 +26,7 @@ namespace Hotel_Mangement_System
 
             if (conn.State == ConnectionState.Open)
             {
-                MessageBox.Show("Connected");
+                //MessageBox.Show("Connected");
             }
             else
             {

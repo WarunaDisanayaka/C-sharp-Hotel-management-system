@@ -57,6 +57,12 @@
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="DBconnection.cs" />
+    <Compile Include="FormAddBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddBooking.Designer.cs">
+      <DependentUpon>FormAddBooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAddRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="ThemeColor.cs" />
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddBooking.resx">
+      <DependentUpon>FormAddBooking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddRoom.resx">
       <DependentUpon>FormAddRoom.cs</DependentUpon>

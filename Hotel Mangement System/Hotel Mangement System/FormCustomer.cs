@@ -28,7 +28,7 @@ namespace Hotel_Mangement_System
         {
             Customer cs = new Customer();
             cs.register(textBox1.Text,textBox2.Text,textBox3.Text,textBox4.Text);
-            MessageBox.Show("Added");
+            MessageBox.Show("Customer added success!");
             read();
             cle();
         }
@@ -96,6 +96,11 @@ namespace Hotel_Mangement_System
             {
                 MessageBox.Show("Do not click header.. ");
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+           cle();
         }
     }
 }
