@@ -22,7 +22,7 @@ namespace Hotel_Mangement_System
         public string Phone { get; set; }
 
         DataSet ds = new DataSet();
-        DataTable dt = new DataTable();
+        public DataTable dt = new DataTable();
 
 
 

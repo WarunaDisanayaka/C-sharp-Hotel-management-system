@@ -17,6 +17,8 @@ namespace Hotel_Mangement_System
             InitializeComponent();
             Customer cu = new Customer();
             cu.read();
+            dataGridView1.DataSource = cu.dt;
+
         }
 
         private void label1_Click(object sender, EventArgs e)
