@@ -47,6 +47,7 @@ namespace Hotel_Mangement_System
 
         public void update(string Name, string Address, string Nic, string Phone)
         {
+            DBconnection db = new DBconnection();
             db.Connect();
             using (MySqlCommand cmd = new MySqlCommand())
             {
@@ -58,7 +59,28 @@ namespace Hotel_Mangement_System
                 cmd.Parameters.Add("@address", MySqlDbType.VarChar).Value = Address;
                 cmd.Parameters.Add("@tel", MySqlDbType.VarChar).Value = Phone;
                 cmd.Parameters.Add("@nic", MySqlDbType.VarChar).Value = Nic;
-                cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = Id;
+                
+
+                cmd.ExecuteNonQuery();
+                db.conn.Close();
+            }
+        }
+
+        //delete
+
+        public void delete(string Nic)
+        {
+            DBconnection db = new DBconnection();
+            db.Connect();
+            using (MySqlCommand cmd = new MySqlCommand())
+            {
+                cmd.CommandText = "DELETE FROM `customer` WHERE `cnic`=@nic";
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = db.conn;
+
+                
+                cmd.Parameters.Add("@nic", MySqlDbType.VarChar).Value = Nic;
+
 
                 cmd.ExecuteNonQuery();
                 db.conn.Close();
