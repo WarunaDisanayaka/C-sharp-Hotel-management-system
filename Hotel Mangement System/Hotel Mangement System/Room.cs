@@ -12,7 +12,7 @@ namespace Hotel_Mangement_System
     {
         public string Name { get; set; }
 
-        public string ID { get; set; }
+        public string RID { get; set; }
 
         public string Type { get; set; }
 
@@ -20,22 +20,28 @@ namespace Hotel_Mangement_System
 
         public string Description { get; set; }
 
+        public int ID { get; set; }
 
-        public void register(string Name, string Address, string Nic, string Phone)
+        DataSet ds = new DataSet();
+        public DataTable dt = new DataTable();
+
+
+        public void register(string Name, string RID, string Type, int Price, string Description)
         {
             DBconnection db = new DBconnection();
             db.Connect();
 
             using (MySqlCommand cmd = new MySqlCommand())
             {
-                cmd.CommandText = "INSERT INTO customer(cname,caddress,ctel,cnic) VALUES(@name,@address,@tel,@nic)";
+                cmd.CommandText = "INSERT INTO `room`(`Room_Name`, `Room_ID`, `Room_Type`, `Room_Price`, `Room_Description`) VALUES (@name,@rid,@rtype,@rprice,@rdis)";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = db.conn;
 
                 cmd.Parameters.Add("@name", MySqlDbType.VarChar).Value = Name;
-                cmd.Parameters.Add("@address", MySqlDbType.VarChar).Value = Address;
-                cmd.Parameters.Add("@tel", MySqlDbType.VarChar).Value = Phone;
-                cmd.Parameters.Add("@nic", MySqlDbType.VarChar).Value = Nic;
+                cmd.Parameters.Add("@rid", MySqlDbType.VarChar).Value = RID;
+                cmd.Parameters.Add("@rtype", MySqlDbType.VarChar).Value = Type;
+                cmd.Parameters.Add("@rprice", MySqlDbType.VarChar).Value = Price;
+                cmd.Parameters.Add("@rdis", MySqlDbType.VarChar).Value = Description;
 
 
                 cmd.ExecuteNonQuery();
@@ -43,6 +49,68 @@ namespace Hotel_Mangement_System
             }
 
 
+        }
+
+        //update
+
+        public void update(string Name, string RID, string Type, int Price, string Description)
+        {
+            DBconnection db = new DBconnection();
+            db.Connect();
+
+            using (MySqlCommand cmd = new MySqlCommand())
+            {
+                cmd.CommandText = "UPDATE `room` SET `Room_Name`=@name,`Room_Type`=@rtype,`Room_Price`=@rprice,`Room_Description`=@rdis WHERE `Room_ID`=@rid";
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = db.conn;
+
+                cmd.Parameters.Add("@name", MySqlDbType.VarChar).Value = Name;
+                cmd.Parameters.Add("@rid", MySqlDbType.VarChar).Value = RID;
+                cmd.Parameters.Add("@rtype", MySqlDbType.VarChar).Value = Type;
+                cmd.Parameters.Add("@rprice", MySqlDbType.VarChar).Value = Price;
+                cmd.Parameters.Add("@rdis", MySqlDbType.VarChar).Value = Description;
+                
+
+
+                cmd.ExecuteNonQuery();
+                db.conn.Close();
+            }
+
+
+        }
+
+        //delete
+
+        public void delete(string RID)
+        {
+            DBconnection db = new DBconnection();
+            db.Connect();
+            using (MySqlCommand cmd = new MySqlCommand())
+            {
+                cmd.CommandText = "DELETE FROM `room` WHERE `Room_ID`=@rid";
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = db.conn;
+
+
+                cmd.Parameters.Add("@rid", MySqlDbType.VarChar).Value = RID;
+
+
+                cmd.ExecuteNonQuery();
+                db.conn.Close();
+            }
+        }
+
+        //read
+
+        public void read()
+        {
+            DBconnection db = new DBconnection();
+            db.Connect();
+            dt.Clear();
+            string sql = "SELECT * FROM `room`";
+            MySqlDataAdapter mda = new MySqlDataAdapter(sql, db.conn);
+            mda.Fill(ds);
+            dt = ds.Tables[0];
         }
 
 
