@@ -64,14 +64,14 @@ namespace Hotel_Mangement_System
 
         //update
 
-        public void update(int ID, string RoomID, string ClientID, int Price, string BookDate, string DeDate, int NoOfRoom, string Nochild, string Noadults, string Breakfast, string Lunch, string Dinner)
+        public void update(string RoomID, string ClientID, int Price, string BookDate, string DeDate, int NoOfRoom, string Nochild, string Noadults, string Breakfast, string Lunch, string Dinner)
         {
             DBconnection db = new DBconnection();
             db.Connect();
 
             using (MySqlCommand cmd = new MySqlCommand())
             {
-                cmd.CommandText = "UPDATE `books` SET `Booked_Room_ID`=@rid,`Booked_Client_ID`=@cid,`Booked_Price`=@bprice,`Booked_Date`=@bdate,`Booked_Departure_Date`=@bddate,`No_Of_Rooms`=@noroom,`No_Of_Children`=@nochild,`No_Of_Adults`=@noadults,`Breakfast`=@break,`Lunch`=@lunch,`Dinner`=@dinner WHERE id = @id";
+                cmd.CommandText = "UPDATE `books` SET `Booked_Room_ID`=@rid,`Booked_Price`=@bprice,`Booked_Date`=@bdate,`Booked_Departure_Date`=@bddate,`No_Of_Rooms`=@noroom,`No_Of_Children`=@nochild,`No_Of_Adults`=@noadults,`Breakfast`=@break,`Lunch`=@lunch,`Dinner`=@dinner WHERE `Booked_Client_ID`=@cid";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = db.conn;
 
@@ -81,7 +81,6 @@ namespace Hotel_Mangement_System
                 cmd.Parameters.Add("@bdate", MySqlDbType.VarChar).Value = BookDate;
                 cmd.Parameters.Add("@bddate", MySqlDbType.VarChar).Value = DeDate;
                 cmd.Parameters.Add("@noroom", MySqlDbType.VarChar).Value = NoOfRoom;
-                cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = ID;
                 cmd.Parameters.Add("@nochild", MySqlDbType.VarChar).Value = Nochild;
                 cmd.Parameters.Add("@noadults", MySqlDbType.VarChar).Value = Noadults;
                 cmd.Parameters.Add("@break", MySqlDbType.VarChar).Value = Breakfast;
@@ -99,18 +98,19 @@ namespace Hotel_Mangement_System
 
         //delete
 
-        public void delete(int ID)
+        public void delete(string ClientID)
         {
             DBconnection db = new DBconnection();
             db.Connect();
             using (MySqlCommand cmd = new MySqlCommand())
             {
-                cmd.CommandText = "DELETE FROM `books` WHERE `id`=@id";
+                cmd.CommandText = "DELETE FROM `books` WHERE `Booked_Client_ID`=@cid";
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = db.conn;
 
 
-                cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = ID;
+                
+                cmd.Parameters.Add("@cid", MySqlDbType.VarChar).Value = ClientID;
 
 
                 cmd.ExecuteNonQuery();

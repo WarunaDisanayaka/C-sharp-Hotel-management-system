@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -55,8 +57,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -81,6 +81,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Details";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(122, 129);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(202, 20);
+            this.textBox2.TabIndex = 26;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(122, 83);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(202, 20);
+            this.textBox1.TabIndex = 25;
             // 
             // label4
             // 
@@ -307,6 +321,7 @@
             this.button7.TabIndex = 15;
             this.button7.Text = "Update";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -316,6 +331,7 @@
             this.button8.TabIndex = 14;
             this.button8.Text = "Delete";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -326,20 +342,6 @@
             this.button9.Text = "Save";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(122, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 20);
-            this.textBox1.TabIndex = 25;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(122, 129);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(202, 20);
-            this.textBox2.TabIndex = 26;
             // 
             // FormAddBooking
             // 
