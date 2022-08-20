@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace Hotel_Mangement_System
@@ -20,6 +21,7 @@ namespace Hotel_Mangement_System
 
         DataSet ds = new DataSet();
         public DataTable dt = new DataTable();
+        public AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
 
 
         public void register(string RoomID, string ClientID, int Price, string BookDate, string DeDate, int NoOfRoom)
@@ -106,10 +108,27 @@ namespace Hotel_Mangement_System
             DBconnection db = new DBconnection();
             db.Connect();
             dt.Clear();
-            string sql = "SELECT * FROM `bppks`";
+            string sql = "SELECT * FROM `books`";
             MySqlDataAdapter mda = new MySqlDataAdapter(sql, db.conn);
             mda.Fill(ds);
             dt = ds.Tables[0];
+        }
+
+        // get room data
+
+        public void roomdata()
+        {
+            DBconnection db = new DBconnection();
+            db.Connect();
+            dt.Clear();
+            string sql = "SELECT * FROM `room`";
+            MySqlCommand cmd = new MySqlCommand(sql,db.conn);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                collection.Add(reader["Room_Name"].ToString());
+
+            }
         }
     }
 }
