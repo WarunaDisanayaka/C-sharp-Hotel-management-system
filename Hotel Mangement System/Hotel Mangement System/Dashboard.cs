@@ -21,6 +21,9 @@ namespace Hotel_Mangement_System
 
         public Dashboard()
         {
+            DBconnection db=new DBconnection();
+            db.Connect();
+
             InitializeComponent();
             random = new Random();
         }
