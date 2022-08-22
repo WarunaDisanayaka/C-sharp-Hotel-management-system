@@ -63,6 +63,26 @@ namespace Hotel_Mangement_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1152d544bfcd48cf9a728b72baf36c92 {
+            get {
+                object obj = ResourceManager.GetObject("1152d544bfcd48cf9a728b72baf36c92", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1152d544bfcd48cf9a728b72baf36c921 {
+            get {
+                object obj = ResourceManager.GetObject("1152d544bfcd48cf9a728b72baf36c921", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_add_user_group_man_man_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-add-user-group-man-man-40", resourceCulture);
@@ -113,6 +133,16 @@ namespace Hotel_Mangement_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_logout_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-logout-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_property_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-property-40", resourceCulture);
@@ -123,9 +153,49 @@ namespace Hotel_Mangement_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_reserve_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-reserve-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_room_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-room-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_room_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-room-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_users_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-users-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_users_1001 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-users-1001", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

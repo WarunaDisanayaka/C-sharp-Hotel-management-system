@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,8 @@ namespace Hotel_Mangement_System
 
         public Dashboard()
         {
+            
+
             DBconnection db=new DBconnection();
             db.Connect();
 
@@ -39,6 +42,41 @@ namespace Hotel_Mangement_System
             string color = ThemeColor.ColorList[index];
 
             return ColorTranslator.FromHtml(color);
+        }
+
+        public void customerCount()
+        {
+            DBconnection db = new DBconnection();
+            db.Connect();
+            string sql = "SELECT COUNT(*) FROM `customer`";
+            MySqlCommand cmd = new MySqlCommand(sql, db.conn);
+            var count1=cmd.ExecuteScalar();
+           label8.Text = count1.ToString();
+           
+        }
+
+
+        public void roomCount()
+        {
+            DBconnection db = new DBconnection();
+            db.Connect();
+            string sql = "SELECT COUNT(*) FROM `room`";
+            MySqlCommand cmd = new MySqlCommand(sql, db.conn);
+            var count1 = cmd.ExecuteScalar();
+          label6.Text = count1.ToString();
+
+        }
+
+
+        public void bookedCount()
+        {
+            DBconnection db = new DBconnection();
+            db.Connect();
+            string sql = "SELECT COUNT(*) FROM `books`";
+            MySqlCommand cmd = new MySqlCommand(sql, db.conn);
+            var count1 = cmd.ExecuteScalar();
+           label9.Text = count1.ToString();
+
         }
 
         private void ActivateButton(object btnSender)
@@ -107,15 +145,44 @@ namespace Hotel_Mangement_System
 
         private void OnLoad(object sender, EventArgs e)
         {
+            timer1.Start();
+           label1.Text=DateTime.Now.ToLongTimeString();
+            label2.Text = DateTime.Now.ToLongDateString();
+
             int w = Screen.PrimaryScreen.Bounds.Width;
             int h = Screen.PrimaryScreen.Bounds.Height;
             this.Location = new Point(0, 0);
             this.Size = new Size(w, h);
+
+            customerCount();
+            roomCount();
+            bookedCount();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormProperty(), sender);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+        label1.Text = DateTime.Now.ToLongTimeString();
+            timer1.Start();
+        }
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

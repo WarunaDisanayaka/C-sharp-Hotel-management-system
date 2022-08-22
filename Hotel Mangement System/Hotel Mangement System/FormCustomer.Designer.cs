@@ -41,9 +41,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -174,6 +174,16 @@
             this.groupBox1.Text = "Customer";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(300, 257);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(82, 25);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "Clear";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -189,21 +199,11 @@
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(300, 257);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(82, 25);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Clear";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // FormCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 450);
+            this.ClientSize = new System.Drawing.Size(1156, 601);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);

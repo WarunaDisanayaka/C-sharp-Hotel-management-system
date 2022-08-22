@@ -64,7 +64,7 @@ namespace Hotel_Mangement_System
 
         //update
 
-        public void update(string RoomID, string ClientID, int Price, string BookDate, string DeDate, int NoOfRoom, string Nochild, string Noadults, string Breakfast, string Lunch, string Dinner)
+        public void update(string RoomID,int Price, string BookDate, string DeDate, int NoOfRoom, int Nochild, int Noadults, string Breakfast, string Lunch, string Dinner,string ClientID)
         {
             DBconnection db = new DBconnection();
             db.Connect();
@@ -76,7 +76,6 @@ namespace Hotel_Mangement_System
                 cmd.Connection = db.conn;
 
                 cmd.Parameters.Add("@rid", MySqlDbType.VarChar).Value = RoomID;
-                cmd.Parameters.Add("@cid", MySqlDbType.VarChar).Value = ClientID;
                 cmd.Parameters.Add("@bprice", MySqlDbType.VarChar).Value = Price;
                 cmd.Parameters.Add("@bdate", MySqlDbType.VarChar).Value = BookDate;
                 cmd.Parameters.Add("@bddate", MySqlDbType.VarChar).Value = DeDate;
@@ -86,6 +85,7 @@ namespace Hotel_Mangement_System
                 cmd.Parameters.Add("@break", MySqlDbType.VarChar).Value = Breakfast;
                 cmd.Parameters.Add("@lunch", MySqlDbType.VarChar).Value = Lunch;
                 cmd.Parameters.Add("@dinner", MySqlDbType.VarChar).Value = Dinner;
+                cmd.Parameters.Add("@cid", MySqlDbType.VarChar).Value = ClientID;
 
 
 
