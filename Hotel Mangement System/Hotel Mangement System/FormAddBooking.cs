@@ -61,6 +61,7 @@ namespace Hotel_Mangement_System
         {
             
             book.register(roomID.Text, cusID.Text, int.Parse(textBox5.Text),dateTimePicker4.Value.ToString("yyy-mm-dd"),dateTimePicker3.Value.ToString("yyy-mm-dd"),int.Parse(textBox6.Text),textBox1.Text.ToString(),textBox2.Text.ToString(),Breakfast.Text,checkBox2.Text,checkBox1.Text);
+            read();
         }
         private void button6_Click(object sender, EventArgs e)
         {
@@ -96,6 +97,7 @@ namespace Hotel_Mangement_System
             try
             {
                 if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+
                 {
                     if (string.Equals(dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString(), "Breakfast"))
                     {
@@ -117,7 +119,7 @@ namespace Hotel_Mangement_System
                     textBox6.Text = (dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString());
                     dateTimePicker4.Text = (dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
                     dateTimePicker3.Text = (dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
-                    roomID.Text = (dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+                   
 
                     
                     
@@ -151,6 +153,11 @@ namespace Hotel_Mangement_System
             book.delete(cusID.Text);
             read();
             cls();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

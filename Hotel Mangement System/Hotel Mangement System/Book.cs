@@ -28,7 +28,7 @@ namespace Hotel_Mangement_System
         public DataTable dt = new DataTable();
         public AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
         public AutoCompleteStringCollection client = new AutoCompleteStringCollection();
-        public int totalprice = 0;
+        public float totalprice = 0;
 
 
         public void register(string RoomID, string ClientID, int Price, string BookDate, string DeDate, int NoOfRoom, string Nochild, string Noadults, string Breakfast, string Lunch, string Dinner)
@@ -165,7 +165,7 @@ namespace Hotel_Mangement_System
 
         public void pricecal(string RoomID, string BookDate, string DeDate, int NoOfRoom)
         {
-            int price = 0;
+            float price = 0;
             int bdate = int.Parse(BookDate);
             int dedate = int.Parse(DeDate);
             int nroom = NoOfRoom;
@@ -178,12 +178,12 @@ namespace Hotel_Mangement_System
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                price = int.Parse(reader["Room_Price"].ToString());
+                price = float.Parse(reader["Room_Price"].ToString());
             }
 
             int stdays = dedate - bdate;
 
-            int sum = stdays * nroom * price;
+            float sum = stdays * nroom * price;
 
             totalprice = sum;
             
